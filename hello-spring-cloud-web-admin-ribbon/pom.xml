@@ -58,6 +58,12 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
 
+        <!-- 仪表盘-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+        </dependency>
+
         <!--&lt;!&ndash; 解决 thymeleaf 模板引擎一定要执行严格的 html5 格式校验问题 &ndash;&gt;-->
         <!--<dependency>-->
             <!--<groupId>net.sourceforge.nekohtml</groupId>-->
