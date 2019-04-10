@@ -1,0 +1,10 @@
+<beans>
+    <bean id="u" class ="com.example.dao.impl.StudentDaoImpl"  scope="singleton" />
+
+    <!--<bean id="studentService" class ="com.example.service.StudentService" />-->
+
+    <bean id="studentService" class ="com.example.service.StudentService" >
+        <property name="studentDao" bean="u"/>
+    </bean>
+
+</beans>
