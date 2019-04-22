@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cifmedia.uc.core.dao.IpScopeMapper" >
+    <resultMap id="BaseResultMap" type="com.example.entity.Student" >
+
+    </resultMap>
+    <sql id="BaseTable" >
+    cmp_uc_ip_scope_info
+  </sql>
+    <sql id="Base_Column_List" >
+    id, ip_start, ip_end, region_code
+  </sql>
+
+    <resultMap id="BaseResultMapper" type="com.example.entity.Student">
+            <id column="birth" property="birth"/>
+            <result column="name" property="name"/>
+            <result column="scope" property="scope"/>
+            <result column="sex" property="sex"/>
+    </resultMap>
+
+</mapper>

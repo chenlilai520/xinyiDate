@@ -28,7 +28,6 @@ public class StudentServiceTest {
 
     @Test
     public void addStudentTest() throws Exception{
-
         Student studentObj = new Student();
         assertTrue(studentService.addStudent(studentObj));
     }

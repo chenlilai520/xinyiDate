@@ -1,3 +1,4 @@
+
 <beans>
     <bean id="u" class ="com.example.dao.impl.StudentDaoImpl"  scope="singleton" />
 
@@ -7,4 +8,7 @@
         <property name="studentDao" bean="u"/>
     </bean>
 
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="myPersistenceUnit"/>
+    </bean>
 </beans>

@@ -1,0 +1,13 @@
+server:
+  port: 8088
+spring:
+    #数据源配置
+    datasource:
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapperLocations: classpath*:mapper/*.xml
+  keyGenMode: 0 #0： 数据库自增， 1：Mycat 序列自增， 默认0
