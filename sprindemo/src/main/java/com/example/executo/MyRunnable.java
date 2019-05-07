@@ -1,7 +1,5 @@
 package com.example.executo;
-
-import org.junit.Test;
-
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -44,8 +42,41 @@ public class MyRunnable  implements  Runnable{
             list.add(map);
         }
         List<BigInteger> ownerIds = list.stream().map(mm -> new BigInteger(mm.get("banthId").toString())).collect(Collectors.toList());
+        list.stream().map(mm -> new BigInteger(mm.get("name").toString())).collect(Collectors.toList());
+        Iterator<Map<String,Object>> lists=list.iterator();
+
+        for (Iterator<Map<String,Object>> iterator=list.iterator(); iterator.hasNext();){
+
+           Map<String,Object> map=iterator.next();
+                iterator.remove();
+        }
 
     }
+
+    public static void main(String[] args) {
+        BigDecimal one=new BigDecimal("4.00");
+
+
+
+        List<Map<String,Object>> list=new ArrayList<>();
+        for(int i=0;i<10;i++){
+            Map<String,Object> map=new HashMap<>();
+            map.put("banthId",i);
+            map.put("name",i);
+            list.add(map);
+        }
+        List<BigInteger> ownerIds = list.stream().map(mm -> new BigInteger(mm.get("banthId").toString())).collect(Collectors.toList());
+        list.stream().map(mm -> new BigInteger(mm.get("name").toString())).collect(Collectors.toList());
+        Iterator<Map<String,Object>> lists=list.iterator();
+//
+//        for (Iterator<Map<String,Object>> iterator=list.iterator(); iterator.hasNext();){
+//
+//            Map<String,Object> map=iterator.next();
+//            iterator.remove();
+//        }
+    }
+
+
 }
 
 
