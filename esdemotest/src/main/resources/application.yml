@@ -1,0 +1,27 @@
+server:
+  port: 8088
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  data:
+    elasticsearch:
+      cluster-nodes: 127.0.0.1:9300
+      repositories:
+        enabled: true
+
+
+mybatis:
+  mapperLocations: classpath*:mapper/*.xml
+  keyGenMode: 0 #0： 数据库自增， 1：Mycat 序列自增， 默认0
+
+
+#spring:
+#  data:
+#    elasticsearch:
+#      cluster-nodes: 127.0.0.1:9300
+#      repositories:
+#        enabled: true

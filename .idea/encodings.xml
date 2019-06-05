@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/hello-spring-cloud-dependencies" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/esdemotest" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hello-spring-cloud-config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hello-spring-cloud-dependencies" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hello-spring-cloud-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hello-spring-cloud-service-admin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hello-spring-cloud-web-admin-feign" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hello-spring-cloud-web-admin-ribbon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sprindemo" charset="UTF-8" />
   </component>
 </project>

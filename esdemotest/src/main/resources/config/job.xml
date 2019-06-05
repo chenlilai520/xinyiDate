@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:reg="http://www.dangdang.com/schema/ddframe/reg"
+       xmlns:job="http://www.dangdang.com/schema/ddframe/job"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.dangdang.com/schema/ddframe/reg http://www.dangdang.com/schema/ddframe/reg/reg.xsd
+       http://www.dangdang.com/schema/ddframe/job http://www.dangdang.com/schema/ddframe/job/job.xsd">
+
+    <!--配置作业注册中心 -->
+    <!-- 10.1.1.62:2181,10.1.1.62:2182,10.1.1.62:2183 测试服1-->
+    <!--&lt;!&ndash; 10.1.1.68:2181,10.1.1.68:2182,10.1.1.68:2183 开发服1&ndash;&gt;-->
+    <!--<reg:zookeeper id="regCenter" server-lists="192.168.163.110:12181,192.168.163.111:12181,192.168.163.112:12181"-->
+                   <!--namespace="cifmedia-job"-->
+                   <!--base-sleep-time-milliseconds="1000" max-sleep-time-milliseconds="3000" max-retries="3"/>-->
+
+    <!--<job:simple id="QuartzJob" class="com.cifmedia.service.app.quartz.QuartzJob"-->
+                <!--registry-center-ref="regCenter" cron="0 0/2 * * * ? " sharding-total-count="1"-->
+                <!--sharding-item-parameters="0=A"/>-->
+
+    <!--&lt;!&ndash;卡包会员卡和优惠券过期处理定时任务(每天0点执行一次) &ndash;&gt;-->
+    <!--<job:simple id="UserCardpkgExpireJob" class="com.cifmedia.service.app.quartz.UserCardpkgExpireJob"-->
+                <!--registry-center-ref="regCenter" cron="0 0 0 * * ? " sharding-total-count="1"-->
+                <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+<!--&lt;!&ndash; 统计时间网店类数据（每天凌晨三点执行）&ndash;&gt;-->
+    <!--<job:simple id="StatisticsDetailTimestore" class="com.cifmedia.service.app.quartz.StatisticsDetailTimestore"-->
+                <!--registry-center-ref="regCenter" cron="0 0 0 * * ? " sharding-total-count="1"-->
+                <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+    <!--&lt;!&ndash;现金券过期处理定时任务(每8小时执行一次) &ndash;&gt;-->
+    <!--<job:simple id="VoucherExpireJob" class="com.cifmedia.service.app.quartz.VoucherExpireJob"-->
+                <!--registry-center-ref="regCenter" cron="0 0 1 * * ? " sharding-total-count="1"-->
+                <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;点心意过期数据处理&ndash;&gt;-->
+    <!--<job:simple id="SocialHeartMeaningExpireJob" class="com.cifmedia.service.app.quartz.SocialHeartMeaningExpireJob"-->
+                <!--registry-center-ref="regCenter" cron="0 0/10 * * * ? " sharding-total-count="1"-->
+                <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;五人约过期数据处理&ndash;&gt;-->
+    <!--<job:simple id="SocialUserDateExpireJob" class="com.cifmedia.service.app.quartz.SocialUserDateExpireJob"-->
+                <!--registry-center-ref="regCenter" cron="0 0/10 * * * ? " sharding-total-count="1"-->
+                <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;土豪派活动过期处理&ndash;&gt;-->
+    <!--<job:simple id="SocialRichPartyActivityExpireJob" class="com.cifmedia.service.app.quartz.SocialRichPartyActivityExpireJob"-->
+                <!--registry-center-ref="regCenter" cron="0 0/10 * * * ? " sharding-total-count="1"-->
+                <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;土豪派红包再分配&ndash;&gt;-->
+    <!--<job:simple id="SocialRichPartyRedistributionExpireJob" class="com.cifmedia.service.app.quartz.SocialRichPartyRedistributionExpireJob"-->
+                <!--registry-center-ref="regCenter" cron="0 0/10 * * * ? " sharding-total-count="1"-->
+                <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;土豪派红包过期处理&ndash;&gt;-->
+    <!--<job:simple id="SocialRichPartyRedPackageExpireJob" class="com.cifmedia.service.app.quartz.SocialRichPartyRedPackageExpireJob"-->
+                <!--registry-center-ref="regCenter" cron="0 0/10 * * * ? " sharding-total-count="1"-->
+                <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;五人约用户再分配&ndash;&gt;-->
+    <!--<job:simple id="SocialUserDateRedistributionExpireJob" class="com.cifmedia.service.app.quartz.SocialUserDateRedistributionExpireJob"-->
+    <!--registry-center-ref="regCenter" cron="0 0/10 * * * ? " sharding-total-count="1"-->
+    <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;五人约创建群聊 &ndash;&gt;-->
+    <!--<job:simple id="SocialUserDateRedistributionExpireJob" class="com.cifmedia.service.app.quartz.SocialUserDateCreateTeamJob"-->
+    <!--registry-center-ref="regCenter" cron="0 0/10 * * * ? " sharding-total-count="1"-->
+    <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--================================================= 社交定时器走redis begin====================================================================-->
+    <!--点心意过期数据处理-->
+    <!--<job:simple id="SocialHeartMeaningExpireRedisJob" class="com.cifmedia.service.app.quartz.SocialHeartMeaningExpireRedisJob"-->
+    <!--registry-center-ref="regCenter" cron="0/10 * * * * ? " sharding-total-count="1"-->
+    <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;五人约过期数据处理&ndash;&gt;-->
+    <!--<job:simple id="SocialUserDateExpireRedisJob" class="com.cifmedia.service.app.quartz.SocialUserDateExpireRedisJob"-->
+    <!--registry-center-ref="regCenter" cron="0/10 * * * * ? " sharding-total-count="1"-->
+    <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;土豪派活动过期处理&ndash;&gt;-->
+    <!--<job:simple id="SocialRichPartyActivityExpireRedisJob" class="com.cifmedia.service.app.quartz.SocialRichPartyActivityExpireRedisJob"-->
+    <!--registry-center-ref="regCenter" cron="0/10 * * * * ? " sharding-total-count="1"-->
+    <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;土豪派红包再分配&ndash;&gt;-->
+    <!--<job:simple id="SocialRichPartyRedistributionExpireRedisJob" class="com.cifmedia.service.app.quartz.SocialRichPartyRedistributionExpireRedisJob"-->
+    <!--registry-center-ref="regCenter" cron="0/10 * * * * ? " sharding-total-count="1"-->
+    <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;土豪派红包过期处理&ndash;&gt;-->
+    <!--<job:simple id="SocialRichPartyRedPackageExpireRedisJob" class="com.cifmedia.service.app.quartz.SocialRichPartyRedPackageExpireRedisJob"-->
+    <!--registry-center-ref="regCenter" cron="0/10 * * * * ? " sharding-total-count="1"-->
+    <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;五人约用户再分配&ndash;&gt;-->
+    <!--<job:simple id="SocialUserDateRedistributionExpireRedisJob" class="com.cifmedia.service.app.quartz.SocialUserDateRedistributionExpireRedisJob"-->
+    <!--registry-center-ref="regCenter" cron="0/10 * * * * ? " sharding-total-count="1"-->
+    <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+
+    <!--&lt;!&ndash;五人约创建群聊 &ndash;&gt;-->
+    <!--<job:simple id="SocialUserDateCreateTeamRedisJob" class="com.cifmedia.service.app.quartz.SocialUserDateCreateTeamRedisJob"-->
+    <!--registry-center-ref="regCenter" cron="0/10 * * * * ? " sharding-total-count="1"-->
+    <!--sharding-item-parameters="0=A" overwrite="true"/>-->
+    <!--================================================= 社交定时器走redis end====================================================================-->
+</beans>

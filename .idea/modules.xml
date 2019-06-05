@@ -3,11 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/hello-spring-cloud-dependencies/cloud-parent.iml" filepath="$PROJECT_DIR$/hello-spring-cloud-dependencies/cloud-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/esdemotest/esdemotest.iml" filepath="$PROJECT_DIR$/esdemotest/esdemotest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello-spring-cloud-config/hello-spring-cloud-config.iml" filepath="$PROJECT_DIR$/hello-spring-cloud-config/hello-spring-cloud-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/hello-spring-cloud-dependencies/hello-spring-cloud-dependencies.iml" filepath="$PROJECT_DIR$/hello-spring-cloud-dependencies/hello-spring-cloud-dependencies.iml" />
       <module fileurl="file://$PROJECT_DIR$/hello-spring-cloud-eureka/hello-spring-cloud-eureka.iml" filepath="$PROJECT_DIR$/hello-spring-cloud-eureka/hello-spring-cloud-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/hello-spring-cloud-service-admin/hello-spring-cloud-service-admin.iml" filepath="$PROJECT_DIR$/hello-spring-cloud-service-admin/hello-spring-cloud-service-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/hello-spring-cloud-web-admin-feign/hello-spring-cloud-web-admin-feign.iml" filepath="$PROJECT_DIR$/hello-spring-cloud-web-admin-feign/hello-spring-cloud-web-admin-feign.iml" />
       <module fileurl="file://$PROJECT_DIR$/hello-spring-cloud-web-admin-ribbon/hello-spring-cloud-web-admin-ribbon.iml" filepath="$PROJECT_DIR$/hello-spring-cloud-web-admin-ribbon/hello-spring-cloud-web-admin-ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sprindemo/sprindemo.iml" filepath="$PROJECT_DIR$/sprindemo/sprindemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/springClound.iml" filepath="$PROJECT_DIR$/.idea/springClound.iml" />
     </modules>
   </component>
